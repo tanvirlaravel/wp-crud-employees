@@ -5,17 +5,17 @@
   <form action="javascript:void(0)" id="frm_add_employee" enctype="multipart/form-data" class="employee-form">
     <div class="form-group">
       <label for="name">Name</label>
-      <input type="text" name="name" placeholder="Employee name" id="name" class="form-input" />
+      <input type="text" name="name" placeholder="Employee name" id="name" class="form-input" required />
     </div>
 
     <div class="form-group">
       <label for="email">Email</label>
-      <input type="text" name="email" placeholder="Employee email" id="email" class="form-input" />
+      <input type="text" name="email" placeholder="Employee email" id="email" class="form-input" required />
     </div>
 
     <div class="form-group">
       <label for="designation">Designation</label>
-      <select name="designation" id="designation" class="form-input">
+      <select name="designation" id="designation" class="form-input" required>
         <option value="">-- Choose Designation --</option>
         <option value="php">PHP Developer</option>
         <option value="full">Full Stack Developer</option>

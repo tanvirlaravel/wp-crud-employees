@@ -1,3 +1,3 @@
 jQuery(document).ready(function () {
-  console.log('Welcome sir');
+  jQuery("#frm_add_employee").validate();
 });

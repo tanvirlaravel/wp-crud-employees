@@ -69,6 +69,9 @@ class MyEmployees {
         // Style 
         wp_enqueue_style( "employee-crud-css", WCE_DIR_URL . "assets/styles.css" );
 
+        
+        // validation js
+        wp_enqueue_script( "jquery-validate", WCE_DIR_URL . "assets/jquery.validate.min.js", array("jquery"), "1.19.5" );
         // js
         wp_enqueue_script( "employee-crud-js", WCE_DIR_URL . "assets/script.js", array("jquery"), "3.0" );
     }
