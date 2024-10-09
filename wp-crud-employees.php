@@ -16,4 +16,9 @@ if(!defined("ABSPATH")){
     exit;
 }
 
-define();
+define("WCE_DIR_PATH", plugin_dir_path( __FILE__ ));
+define("WCE_DIR_URL", plugin_dir_url( __FILE__ ));
+
+include_once WCE_DIR_PATH . "MyEmployees.php";
+
+new MyEmployees();
