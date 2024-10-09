@@ -26,3 +26,6 @@ $myemployess = new MyEmployees();
 
 // Create db table
 register_activation_hook( __FILE__, [$myemployess, "createEmployessTable"] );
+
+// Drop db table 
+register_deactivation_hook( __FILE__, [$myemployess, "dropEmployessTable"] );

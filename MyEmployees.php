@@ -29,4 +29,10 @@ class MyEmployees {
        require_once (ABSPATH . "/wp-admin/includes/upgrade.php");
        dbDelta( $createCommand );
     }
+
+    public function dropEmployessTable(){
+        $delete_command = "DROP TABLE IF EXISTS {$this->table_name}";
+
+        $this->wpdb->query($delete_command);
+    }
 }
