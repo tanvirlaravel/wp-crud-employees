@@ -21,4 +21,8 @@ define("WCE_DIR_URL", plugin_dir_url( __FILE__ ));
 
 include_once WCE_DIR_PATH . "MyEmployees.php";
 
-new MyEmployees();
+// Create class Object
+$myemployess = new MyEmployees();
+
+// Create db table
+register_activation_hook( __FILE__, [$myemployess, "createEmployessTable"] );
