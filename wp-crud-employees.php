@@ -15,3 +15,5 @@
 if(!defined("ABSPATH")){
     exit;
 }
+
+define();

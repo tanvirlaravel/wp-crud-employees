@@ -1,0 +1,6 @@
+1 Follow Class Based Plugin Development
+2 Create a DB Table 
+3 Deactivation Hook 
+4 Create a Wordpress of Plugin Action and Also how to Delete on Deactivation.
+5 Create a Shortcode and Put into Page That we have created 
+6 Follow the Ajax Contcept as well some DB Queries to Perform CRUD Application
