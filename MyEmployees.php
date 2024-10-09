@@ -22,6 +22,7 @@ class MyEmployees {
         `name` varchar(50) NOT NULL,
         `email` varchar(50) DEFAULT NULL,
         `designation` varchar(50) DEFAULT NULL,
+        `profile_image` varchar(220) DEFAULT NULL,
         PRIMARY KEY (`id`)
         ) ". $collate ."
        ";
