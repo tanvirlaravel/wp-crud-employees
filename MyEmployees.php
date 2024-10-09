@@ -51,8 +51,15 @@ class MyEmployees {
         $this->wpdb->query($delete_command);
     }
 
+    // Render Employee Form Layout
     public function createEmployessForm(){
-        $message = "<h1>Emplyess Form</h1>";
-        return $message;
+        ob_start();
+
+        include_once WCE_DIR_PATH . "template/employee_form.php";
+        $template = ob_get_contents();
+
+        ob_end_clean();
+
+        return $template;
     }
 }
