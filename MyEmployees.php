@@ -74,5 +74,22 @@ class MyEmployees {
         wp_enqueue_script( "jquery-validate", WCE_DIR_URL . "assets/jquery.validate.min.js", array("jquery"), "1.19.5" );
         // js
         wp_enqueue_script( "employee-crud-js", WCE_DIR_URL . "assets/script.js", array("jquery"), "3.0" );
+
+        // wp_localize_script
+        wp_localize_script( "employee-crud-js", "wce_object", array(
+            "ajax_url" => admin_url( "admin-ajax.php" )
+        ));
+    }
+
+
+    // Proecess ajax request : Add employee form
+    public function handleAddEmployeeFormData(){
+        echo json_encode([
+            "status"    => 1,
+            "message"   => "Request completed",
+            "data"      => $_POST
+        ]);
+        
+        die;
     }
 }

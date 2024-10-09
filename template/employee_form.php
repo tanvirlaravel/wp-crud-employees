@@ -3,6 +3,9 @@
   <!-- Add Employees layout -->
   <h3 class="section-title">Add Employees</h3>
   <form action="javascript:void(0)" id="frm_add_employee" enctype="multipart/form-data" class="employee-form">
+
+    <input type="hidden" name="action" value="wce_add_employee" />
+    
     <div class="form-group">
       <label for="name">Name</label>
       <input type="text" name="name" placeholder="Employee name" id="name" class="form-input" required />

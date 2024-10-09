@@ -35,3 +35,6 @@ add_shortcode( "wp-employee-form", [$myemployess, "createEmployessForm"] );
 
 // 
 add_action( "wp_enqueue_scripts", [$myemployess, "addAssetsToPlugin"] );
+
+// Process Ajax request 
+add_action( "wp_ajax_wce_add_employee", [$myemployess, "handleAddEmployeeFormData"] );
