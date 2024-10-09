@@ -14,7 +14,8 @@ class MyEmployees {
        
     }
 
-    public function createEmployessTable(){
+    // Create DB table + WordPress Page
+    public function callPluginActivationFunctions(){
         $collate = $this->wpdb->get_charset_collate();
        $createCommand = "
        CREATE TABLE `". $this->table_name ."` (
@@ -29,6 +30,19 @@ class MyEmployees {
 
        require_once (ABSPATH . "/wp-admin/includes/upgrade.php");
        dbDelta( $createCommand );
+
+       // Wp page 
+       $page_title = "Employee CRUD Stystem";
+       $page_content = "[wp-employee-form]";
+
+       if( ! get_page_by_title( $page_title ) ){
+            wp_insert_post( array(
+                "post_title"    => $page_title,
+                "post_content"  => $page_content,
+                "post_type"     => "page",
+                "post_status"   => "publish"
+            ) );
+       }
     }
 
     public function dropEmployessTable(){

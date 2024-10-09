@@ -25,7 +25,7 @@ include_once WCE_DIR_PATH . "MyEmployees.php";
 $myemployess = new MyEmployees();
 
 // Create db table
-register_activation_hook( __FILE__, [$myemployess, "createEmployessTable"] );
+register_activation_hook( __FILE__, [$myemployess, "callPluginActivationFunctions"] );
 
 // Drop db table 
 register_deactivation_hook( __FILE__, [$myemployess, "dropEmployessTable"] );
