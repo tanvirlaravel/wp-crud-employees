@@ -35,4 +35,9 @@ class MyEmployees {
 
         $this->wpdb->query($delete_command);
     }
+
+    public function createEmployessForm(){
+        $message = "<h1>Emplyess Form</h1>";
+        return $message;
+    }
 }
