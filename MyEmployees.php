@@ -84,11 +84,33 @@ class MyEmployees {
 
     // Proecess ajax request : Add employee form
     public function handleAddEmployeeFormData(){
-        echo json_encode([
-            "status"    => 1,
-            "message"   => "Request completed",
-            "data"      => $_POST
+
+        $name = sanitize_text_field( $_POST['name'] );
+        $email = sanitize_text_field( $_POST['email'] );
+        $designation = sanitize_text_field( $_POST['designation'] );
+
+        // File is empty
+
+        $this->wpdb->insert($this->table_name, [
+            "name"          => $name,
+            "email"         => $email,
+            "designation"   => $designation
         ]);
+
+        $employes_id = $this->wpdb->insert_id;
+        
+        if($employes_id > 0){
+            echo json_encode([
+                "status"    => 1,
+                "message"   => "Succefully Employee created",
+            ]);
+        }else{
+            echo json_encode([
+                "status"    => 0,
+                "message"   => "Failed to save emplyee"
+            ]);
+           
+        }
         
         die;
     }
