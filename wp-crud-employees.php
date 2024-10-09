@@ -32,3 +32,6 @@ register_deactivation_hook( __FILE__, [$myemployess, "dropEmployessTable"] );
 
 // Register Shortcode
 add_shortcode( "wp-employee-form", [$myemployess, "createEmployessForm"] );
+
+// 
+add_action( "wp_enqueue_scripts", [$myemployess, "addAssetsToPlugin"] );

@@ -62,4 +62,14 @@ class MyEmployees {
 
         return $template;
     }
+
+
+    // Add css and js
+    public function addAssetsToPlugin(){
+        // Style 
+        wp_enqueue_style( "employee-crud-css", WCE_DIR_URL . "assets/styles.css" );
+
+        // js
+        wp_enqueue_script( "employee-crud-js", WCE_DIR_URL . "assets/script.js", array("jquery"), "3.0" );
+    }
 }
