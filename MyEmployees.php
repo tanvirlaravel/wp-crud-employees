@@ -89,12 +89,23 @@ class MyEmployees {
         $email = sanitize_text_field( $_POST['email'] );
         $designation = sanitize_text_field( $_POST['designation'] );
 
-        // File is empty
+        /**
+         * array("test_form" => false) -> wp_handle_upload is not going to check any file attributes or even file submission
+         * 
+         * array ("test_form" => true)  -> wp_handle_upload will validate form request, nonce value or other form parameters
+         */
+        // Check for file
+        $profile_url = "";
+        if(isset($_FILES['profile_image']['name'])){
+            $fileUpload = wp_handle_upload( $_FILES['profile_image'], array("test_form" => false) ); 
+            $profile_url = $fileUpload["url"];
+        }else{}
 
         $this->wpdb->insert($this->table_name, [
             "name"          => $name,
             "email"         => $email,
-            "designation"   => $designation
+            "designation"   => $designation,
+            "profile_image"   => $profile_url
         ]);
 
         $employes_id = $this->wpdb->insert_id;

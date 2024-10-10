@@ -29,7 +29,7 @@
 
     <div class="form-group">
       <label for="file">Profile Image</label>
-      <input type="file" name="file" id="file" class="form-input-file" />
+      <input type="file" name="profile_image" id="file" class="form-input-file" />
     </div>
 
     <div class="form-group">
